@@ -327,5 +327,127 @@ func main() {
 		6. Give the function a name that regflects what the function does.
 	*/
 
+	/*
+		Go Function Parameters and Arguments
+		Parameters and Arguments
+
+		Parameters are objects that act as variables inside the function through which information can be passed to functions.
+		Parameters and their types are specified after the function name, inside the parentheses.
+		parameters are usually separated using commas in case of more than one parameter.
+
+		Syntax:
+		func FunctionName(param1 type, param2 type, param3 type){
+			//code executed
+		}
+	*/
+	familyName("Liam", 3)
+	familyName("Jenny", 14)
+	familyName("Anja", 30)
+
+	/*
+		RETURN VALUES
+		If you want a function to return a value , you need to define the data type of the return value and also use the return keyword inside the function.
+		Syntax:
+		func FunctionName(param1type, param2 type) type {
+			//code to be executed
+			return output
+		}
+	*/
+
+	fmt.Println(myFunction(456, 200))
+
+	fmt.Println(myAddfunc(456, 200))
+
+	fmt.Println(multiReturn(52, "Hello"))
+
+	//Prints same as above
+	f, g := multiReturn(5, "Hello")
+	fmt.Println(f, g)
+	//Sometimes we may want to omit  one of the return values
+	q, _ := multiReturn(5, "Hello")
+	fmt.Println(q)
+	//Some times we may want to omit one of the returned values
+	_, s := multiReturn(5, "Hello")
+	fmt.Println(s)
+
+	fmt.Println(factorial_recursion(4))
+
+	type Person struct {
+		name   string
+		age    int
+		job    string
+		salary int
+	}
+	var pers1 Person
+	var pers2 Person
+
+	// Pers1 specification
+	pers1.name = "Hege"
+	pers1.age = 45
+	pers1.job = "Teacher"
+	pers1.salary = 6000
+
+	// Pers2 specification
+	pers2.name = "Cecilie"
+	pers2.age = 24
+	pers2.job = "Marketing"
+	pers2.salary = 4500
+
+	// Access and print Pers1 info
+	fmt.Println("Name: ", pers1.name)
+	fmt.Println("Age: ", pers1.age)
+	fmt.Println("Job: ", pers1.job)
+	fmt.Println("Salary: ", pers1.salary)
+
+	// Access and print Pers2 info
+	fmt.Println("Name: ", pers2.name)
+	fmt.Println("Age: ", pers2.age)
+	fmt.Println("Job: ", pers2.job)
+	fmt.Println("Salary: ", pers2.salary)
+
 	return
 }
+
+func familyName(fname string, age int) {
+	fmt.Println("Hello", age, "year old", fname, "Resfnes")
+}
+
+func myFunction(x int, y int) int {
+	return x + y
+}
+
+// Another way of specifying the return value.
+func myAddfunc(x int, y int) (result int) {
+	result = x + y
+	return
+}
+
+// Multiple return variables
+func multiReturn(x int, y string) (result int, txt1 string) {
+	result = x * x
+	txt1 = y + "World!"
+	return
+}
+
+func factorial_recursion(x float64) (y float64) {
+	if x > 0 {
+		y = x * factorial_recursion(x-1)
+	} else {
+		y = 1
+	}
+	return
+}
+
+/*
+GO STRUCTURES, STRUCTS.
+A struct is used to create a collection of members of different data types, into a single variable.
+It is useful for grouping data to create records
+
+struct declaration:
+type struct_name struct {
+	member1 datatype;
+	member2 datatype;
+	member3 datatype;
+	...
+}
+*/
