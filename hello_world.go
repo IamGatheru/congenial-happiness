@@ -170,5 +170,162 @@ func main() {
 	fmt.Printf("length = %d\n", len(numbersCopy))
 	fmt.Printf("capacity = %d\n", cap(numbersCopy))
 
+	//--Operators In Golang--
+	/*
+		1. Arithmetic opearators
+		2. Assignment operators
+		3. Comparison operators
+		4. Logical operators
+		5. Bitwise operators
+
+		Go has the following conditional statements
+		if, else, else if, switch
+		note that else {}should be on the same line
+		i.e: } else {
+			//not any other way
+		}
+		//Switch statement;
+		switch expression {
+		case x:
+			//code block
+		case y:
+			//code block
+		case z:
+			...
+		default:
+			//code block
+		}
+	*/
+
+	//Single-Case Switch Example
+	day := 4
+
+	switch day {
+	case 1:
+		fmt.Println("Monday")
+	case 2:
+		fmt.Println("Tuesday")
+	case 3:
+		fmt.Println("Wednesday")
+	case 4:
+		fmt.Println("Thursday")
+	case 5:
+		fmt.Println("Friday")
+	case 6:
+		fmt.Println("Saturday")
+	case 7:
+		fmt.Println("Sunday")
+	}
+
+	//The default keyword is included as the last statement to specify wht code should run if there is no case match
+	/*
+		The Multiple-case switch statement
+		Syntax:
+		switch expression {
+		case x, y:
+			//code block if expression is evaluated to x or y
+		case v, w:
+			//code block if expression evaluates to v or w
+		case z:
+			...
+		default:
+			//code block if expression is not found in any cases
+		}
+	*/
+	day1 := 5
+
+	switch day1 {
+	case 1, 3, 5:
+		fmt.Println("Odd weekday")
+	case 2, 4:
+		fmt.Println("Even weekday")
+	case 6, 7:
+		fmt.Println("Weekend")
+	default:
+		fmt.Println("Invalid day of day number")
+
+	}
+
+	/*
+		The for loop can take up to three statements:
+		for statement1;statement2; statement3 {
+			//code to be executed for each iteration
+		}
+	*/
+
+	for i := 0; i < 5; i++ {
+		fmt.Println(i)
+	}
+
+	for j := 0; j <= 100; j += 10 {
+		fmt.Println(j)
+	}
+
+	//The continue statement is used to skip one or more iterations in the loop, It then continues with the next iteration in the loop.
+	for k := 0; k < 5; k++ {
+		if k == 3 {
+			continue
+		}
+		fmt.Println(i)
+	}
+
+	//The break statement breaks out of the loop when i is equal to 3:
+
+	for l := 0; l < 5; l++ {
+		if l == 3 {
+			break
+		}
+		fmt.Println(l)
+	}
+	//Note that break and continue statements are always used with condition.
+
+	//Nested loops
+	adj := [2]string{"big", "tasty"}
+	fruits := [3]string{"apple", "orange", "banana"}
+	for t := 0; t < len(adj); t++ {
+		for w := 0; w < len(fruits); w++ {
+			fmt.Println(adj[t], fruits[w])
+		}
+	}
+	/*The Range Keyword is used to easily iterate over an array, slice or map. It returns both the index and the value.
+	The range keyword is used like this:
+	for index, value := array|slice|map {
+		//code to be executed for each iteration
+	}*/
+
+	fruits2 := [3]string{"apple", "orange", "banana"}
+	for idx, val := range fruits2 {
+		fmt.Printf("%v\t%v\n", idx, val)
+	}
+	//We want to omit the indices(idx stores the index, val stores the value)
+	fruits3 := [3]string{"apple", "orange", "banana"}
+	for _, val := range fruits3 {
+		fmt.Printf("%v\n", val)
+	} //The same will happen when we wish to omit the value and print indices
+
+	/*
+		####--- GO FUNCTIONS ---####
+		A function is a block of statements that can be used repeatedly in a program.
+		A function will not execute automatically when a page loads
+		A  function will be executed by a call to the function.
+
+		--Create a Function--
+		Use the func keyword
+		specify a name for the function followed by parentheses()
+		Add code that defines what the function should do, inside the curly braces {}
+		Basic syntax:
+		func FunctionName() {
+			//code to be executed
+		}
+
+		Naming Rules for Go Functions
+		1. Must start with a letter
+		2. Can only contain only alpha-numeric characters and underscores
+		3. They are case sensitive
+		4. It cannot contain spaces
+		5. Use multi-word variable naming if function name consists of multiple words.
+		6. Give the function a name that regflects what the function does.
+	*/
+
 	return
 }
