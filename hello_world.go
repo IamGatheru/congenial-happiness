@@ -405,6 +405,38 @@ func main() {
 	fmt.Println("Job: ", pers2.job)
 	fmt.Println("Salary: ", pers2.salary)
 
+	/*
+		Maps in Go
+	*/
+	var nn = map[string]string{"brand": "Ford", "model": "Mustang", "year": "1964"}
+	bb := map[string]int{"Oslo": 1, "Bergen": 2, "Trondheim": 3, "Stavanger": 4}
+
+	fmt.Printf("a\t%v\n", nn)
+	fmt.Printf("b\t%v\n", bb)
+
+	//Creating maps using make()function
+	//The make() function is the right way to create an empty map. Other methods will cause a runtime panic
+	var aa = make(map[string]string) // The map is empty now
+
+	aa["brand"] = "Ford"
+	aa["model"] = "Mustang"
+	aa["year"] = "1964" // a is no longer emptya["year"] = "1970" // Updating an element
+
+	aa["color"] = "red" // Adding an element
+
+	fmt.Println(aa)
+
+	//Updating and adding to a map
+
+	bc := make(map[string]int)
+	bc["Oslo"] = 1
+	bc["Bergen"] = 2
+	bc["Trondheim"] = 3
+	bc["Stavanger"] = 4
+
+	fmt.Printf("a\t%v\n", aa)
+	fmt.Printf("b\t%v\n", bc)
+
 	return
 }
 
@@ -450,4 +482,19 @@ type struct_name struct {
 	member3 datatype;
 	...
 }
+*/
+
+/*
+GO MAPS:
+Maps are used to store data values in key: value pairs
+Each Element is in a key:value pair
+a map is unordered and changeable collection that does not allow duplicates.
+The length of a map is the number of its elements, which can be found using len()
+The default value of a map is nil
+maps hold references to an underlying hash table
+Go has numerous ways of creating maps:
+Case 1
+
+var a = map[keyType]ValueType{key1:value1, key2:value2, ...}
+b := map[KeyType]ValueType{key1:value1, key2:value2, ...}
 */
