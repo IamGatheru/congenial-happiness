@@ -1,0 +1,1 @@
+This repository contains source code written while learning how to implement linked lists. I started by learning singly linked lists, circular linked lists and then doubly linked lists. I did this in preparation for stacks and queue data structure implementations.
